@@ -6,14 +6,10 @@ import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { LampContainer } from "@/components/ui/lamp";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import {
-  TypewriterEffect,
-  TypewriterEffectSmooth,
-} from "@/components/ui/typewriter-effect";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 const products = [
@@ -167,8 +163,6 @@ const content = [
 ];
 
 export default function Home() {
-  console.log("Ellie Smart Home System");
-
   return (
     <section>
       <section className="relative">
