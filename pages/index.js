@@ -256,7 +256,7 @@ export default function Home() {
         <LampContainer>
           <motion.p
             initial={{ y: 0 }}
-            whileInView={{ y: [0, -150] }}
+            whileInView={{ y: [0, -120] }}
             transition={{ ease: "easeOut", duration: 1 }}
             // whileInView={true}
             className="text-white text-center text-2xl font-semibold w-2/3"
