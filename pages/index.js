@@ -106,7 +106,7 @@ const content = [
       "AI-driven interface learns user habits over time, creating personalized automation routines that simplify tasks and save energy. With robust voice and app controls, Ellie ensures accessibility and convenience, while its focus on data privacy provides peace of mind. The system's modular architecture allows for easy scalability, making it the ideal solution for smart homes of any size.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
+        <img
           src="/innovation.png"
           width={300}
           height={300}
@@ -122,7 +122,7 @@ const content = [
       "Predictive maintenance and fault detection. Using AI-powered analytics and IoT sensors, Ellie can monitor the performance of connected devices, such as HVAC systems, appliances, and smart locks, to predict potential issues before they occur.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
+        <img
           src="/maintenance.jpg"
           width={300}
           height={300}
@@ -138,7 +138,7 @@ const content = [
       "Ellie could incorporate sensors and devices that monitor indoor air quality, temperature, humidity, and even noise levels to ensure optimal living conditions. Using this data, the system could provide real-time adjustments to improve the environment, such as purifying air, adjusting lighting to match circadian rhythms, or playing calming sounds to reduce stress.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
+        <img
           src="/real-time.jpg"
           width={300}
           height={300}
@@ -154,7 +154,7 @@ const content = [
       "AR (Augmented Reality) and smart projectors to transform spaces dynamically. For example, walls could display virtual art, change colors to suit moods, or provide immersive environments for gaming or relaxation. With sensors detecting room occupancy, Ellie could personalize settings such as lighting, sound, and projected visuals to suit each individual’s preferences.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
+        <img
           src="/immersive.png"
           width={300}
           height={300}
@@ -195,14 +195,14 @@ export default function Home() {
                 </Link>
               </section>
             </section>
-            {/* <Image
+            {/* <img
             src={"/main_icons.png"}
             width={664}
             height={664}
             className="w-[40%] opacity-90"
           /> */}
             {/* <motion.div> */}
-            <Image
+            <img
               src={"/smart_home.png"}
               className="w-[85%] lg:w-[40%] opacity-95 mx-auto hover:scale-105 hover:-rotate-1 transition-all mb-8 lg:mb-0"
               width={960}
@@ -231,7 +231,7 @@ export default function Home() {
             </li>
             <li className="text-center opacity-75">
               {/* <span className="text-primary text-4xl">40+</span> */}
-              <Image
+              <img
                 src={"/android_ios.png"}
                 width={72}
                 height={60}
@@ -241,7 +241,7 @@ export default function Home() {
             </li>
             <li className="text-center opacity-75">
               {/* <span className="text-primary text-4xl">40+</span> */}
-              <Image
+              <img
                 src={"/layers.png"}
                 width={50}
                 height={50}
