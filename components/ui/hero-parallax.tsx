@@ -140,7 +140,7 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-48 lg:h-96 w-[200px] h-[100px] lg:h-[100px] lg:w-[350px] relative flex-shrink-0"
     >
-      <Image
+      <img
         src={product.thumbnail}
         height={600}
         width={175}

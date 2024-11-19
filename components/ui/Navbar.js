@@ -9,7 +9,7 @@ const Navbar = () => (
     <Container className={"grid grid-cols-12 items-center justify-between"}>
       <section className="col-span-3">
         <Link href={"/"}>
-          <Image src={"/logo.png"} width={240} height={120} className="w-24" />
+          <img src={"/logo.png"} width={240} height={120} className="w-24" />
         </Link>
       </section>
       <section className="col-span-6 hidden lg:block">
