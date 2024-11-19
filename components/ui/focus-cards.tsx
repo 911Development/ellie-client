@@ -26,7 +26,6 @@ export const Card = React.memo(
       <img
         src={card.src}
         alt={card.title}
-        fill
         className="object-cover w-full h-full absolute inset-0"
       />
       <div
