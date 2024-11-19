@@ -38,14 +38,6 @@ const Navbar = () => (
               About
             </Link>
           </li>
-          <li>
-            <Link
-              href={"#contact"}
-              className="font-semibold text-gray-400 hover:text-primary transition-all"
-            >
-              Contact
-            </Link>
-          </li>
         </ul>
       </section>
       <section className="col-span-9 block lg:hidden ms-auto">
