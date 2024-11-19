@@ -167,6 +167,8 @@ const content = [
 ];
 
 export default function Home() {
+  console.log("Ellie Smart Home System");
+
   return (
     <section>
       <section className="relative">
