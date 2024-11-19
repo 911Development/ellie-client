@@ -1,115 +1,295 @@
+import Container from "@/components/Container";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { FocusCards } from "@/components/ui/focus-cards";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { LampContainer } from "@/components/ui/lamp";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import {
+  TypewriterEffect,
+  TypewriterEffectSmooth,
+} from "@/components/ui/typewriter-effect";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import localFont from "next/font/local";
+import Link from "next/link";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const products = [
+  {
+    title: "Moonbeam",
+    link: "https://www.ecobee.com/",
+    thumbnail: "/products/ecobee_logo.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://store.google.com/regionpicker?hl=en-US&pli=1",
+    thumbnail: "/products/google_nest_logo.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail: "/products/igloohome_logo.png",
+  },
+
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail: "/products/nuki_logo.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail: "/products/sensibo_logo.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail: "/products/sonof_logo.png",
+  },
+
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail: "/products/tado_logo.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail: "/products/yale_logo.png",
+  },
+];
+
+const cards = [
+  {
+    title: "Smart Hue",
+    src: "/products/hue.jpg",
+  },
+  {
+    title: "Smart Air",
+    src: "/products/air.jpg",
+  },
+  {
+    title: "Smart Plug",
+    src: "/products/plug.jpg",
+  },
+  {
+    title: "Smart Lock",
+    src: "/products/lock.jpg",
+  },
+];
+
+const words = [
+  {
+    text: "Everything",
+  },
+  {
+    text: "is",
+  },
+  {
+    text: "easy",
+  },
+  {
+    text: "with",
+  },
+  {
+    text: "ELLIE.",
+    className: "text-primary",
+  },
+];
+
+const content = [
+  {
+    title: "Innovation",
+    description:
+      "AI-driven interface learns user habits over time, creating personalized automation routines that simplify tasks and save energy. With robust voice and app controls, Ellie ensures accessibility and convenience, while its focus on data privacy provides peace of mind. The system's modular architecture allows for easy scalability, making it the ideal solution for smart homes of any size.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/innovation.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Maintenance",
+    description:
+      "Predictive maintenance and fault detection. Using AI-powered analytics and IoT sensors, Ellie can monitor the performance of connected devices, such as HVAC systems, appliances, and smart locks, to predict potential issues before they occur.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/maintenance.jpg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Real-Time Adjusments",
+    description:
+      "Ellie could incorporate sensors and devices that monitor indoor air quality, temperature, humidity, and even noise levels to ensure optimal living conditions. Using this data, the system could provide real-time adjustments to improve the environment, such as purifying air, adjusting lighting to match circadian rhythms, or playing calming sounds to reduce stress.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/real-time.jpg"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Immersive Technology",
+    description:
+      "AR (Augmented Reality) and smart projectors to transform spaces dynamically. For example, walls could display virtual art, change colors to suit moods, or provide immersive environments for gaming or relaxation. With sensors detecting room occupancy, Ellie could personalize settings such as lighting, sound, and projected visuals to suit each individual’s preferences.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <Image
+          src="/immersive.png"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+];
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <section>
+      <section className="relative">
+        <BackgroundBeamsWithCollision className="top-0 left-0">
+          <Container className={"lg:flex lg:items-center lg:justify-between"}>
+            <section className="lg:w-[50%]">
+              <h1 className="text-4xl lg:text-7xl text-center lg:text-start font-bold text-dark">
+                BUILD YOUR <span className="text-primary">SMART HOME</span>{" "}
+                PERFECT
+              </h1>
+              <br />
+              <p className="lg:text-xl font-semibold text-center lg:text-start text-gray-400 lg:w-2/3">
+                Transforming houses into smart spaces with Ellie Smart Home
+                Assistant. Your home, smarter than ever before!
+              </p>
+              <br />
+              <section className="lg:flex items-center gap-4 hidden">
+                <Link
+                  href={"#products"}
+                  className="flex items-center gap-2 font-semibold text-primary hover:bg-primary hover:text-white rounded-lg p-1 hover:p-3 transition-all"
+                >
+                  <span>Smart Products</span>
+                  <FontAwesomeIcon icon={faAngleDown} />
+                </Link>
+              </section>
+            </section>
+            {/* <Image
+            src={"/main_icons.png"}
+            width={664}
+            height={664}
+            className="w-[40%] opacity-90"
+          /> */}
+            {/* <motion.div> */}
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={"/smart_home.png"}
+              className="w-[85%] lg:w-[40%] opacity-95 mx-auto hover:scale-105 hover:-rotate-1 transition-all mb-8 lg:mb-0"
+              width={960}
+              height={840}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            {/* </motion.div> */}
+            <section className="flex items-center justify-center gap-4 lg:hidden">
+              <Link
+                href={"#products"}
+                className="flex items-center gap-2 font-semibold text-white bg-primary rounded-lg py-2 px-4 transition-all"
+              >
+                <span>Smart Products</span>
+                <FontAwesomeIcon icon={faAngleDown} />
+              </Link>
+            </section>
+          </Container>
+        </BackgroundBeamsWithCollision>
+      </section>
+      <section className="my-12">
+        <Container>
+          <ul className="flex items-center justify-center gap-24">
+            <li className="text-center opacity-75">
+              <span className="text-primary text-2xl lg:text-4xl">40+</span>
+              <br />
+              <span className="text-gray-400">Smart Products</span>
+            </li>
+            <li className="text-center opacity-75">
+              {/* <span className="text-primary text-4xl">40+</span> */}
+              <Image
+                src={"/android_ios.png"}
+                width={72}
+                height={60}
+                className="w-10 lg:w-12 mx-auto mb-1"
+              />
+              <span className="text-gray-400">Platform Support</span>
+            </li>
+            <li className="text-center opacity-75">
+              {/* <span className="text-primary text-4xl">40+</span> */}
+              <Image
+                src={"/layers.png"}
+                width={50}
+                height={50}
+                className="w-10 mx-auto mb-1"
+              />
+              <span className="text-gray-400">Modern</span>
+            </li>
+          </ul>
+        </Container>
+      </section>
+      <section>
+        <LampContainer>
+          <motion.p
+            initial={{ y: 0 }}
+            whileInView={{ y: [0, -150] }}
+            transition={{ ease: "easeOut", duration: 1 }}
+            // whileInView={true}
+            className="text-white text-center text-2xl font-semibold w-2/3"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            Transforming houses into smart spaces
+          </motion.p>
+
+          <HeroHighlight className="font-semibold text-center text-3xl">
+            <span className="text-white">
+              ELLIE is designed entirely with your needs
+            </span>
+            &nbsp;
+            <Highlight>in mind!</Highlight>
+          </HeroHighlight>
+        </LampContainer>
+      </section>
+      <section>
+        <ContainerScroll />
+      </section>
+      <section id="products">
+        <Container>
+          <section className="mb-12">
+            <TypewriterEffectSmooth words={words} />
+          </section>
+          <section>
+            <FocusCards cards={cards} />
+          </section>
+        </Container>
+      </section>
+      <section id="partnerships">
+        <HeroParallax products={products} />
+      </section>
+      <section id="about">
+        <StickyScroll content={content} />
+      </section>
+    </section>
   );
 }
