@@ -7,7 +7,6 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
-import Image from "next/image";
 
 export const HeroParallax = ({
   products,
@@ -108,11 +107,12 @@ export const Header = () => {
         Home <br /> Assistant
       </h1>
       <p className="max-w-2xl text-gray-500 text-xl mt-8 dark:text-neutral-200">
-        We build ultimate smart houses with the latest technologies and smart
-        products. We are achieving great things together with our&nbsp;
+        We build ultimate smart houses embedded with cutting-edge technology and
+        innovative products. Together with our trusted&nbsp;
         <span className="bg-primary p-0.5 text-white font-semibold rounded">
-          partnerships.
+          partners
         </span>
+        , we're creating a smarter, more connected future for your home.
       </p>
     </div>
   );

@@ -115,7 +115,7 @@ const content = [
   {
     title: "Maintenance",
     description:
-      "Predictive maintenance and fault detection. Using AI-powered analytics and IoT sensors, Ellie can monitor the performance of connected devices, such as HVAC systems, appliances, and smart locks, to predict potential issues before they occur.",
+      "Ellie offers an intuitive maintenance and fault detection system. Using AI-powered analytics and IoT sensors, Ellie monitors the performance of connected devices—such as HVAC systems, appliances, and smart locks—to predict and address potential issues before they occur.",
     content: (
       <div className="h-full w-full  flex items-center justify-center text-white">
         <img
@@ -175,7 +175,7 @@ export default function Home() {
               </h1>
               <br />
               <p className="lg:text-xl font-semibold text-center lg:text-start text-gray-400 lg:w-2/3">
-                Transforming houses into smart spaces with Ellie Smart Home
+                Transforming houses into smart spaces is Ellie Smart Home
                 Assistant. Your home, smarter than ever before!
               </p>
               <br />
