@@ -67,7 +67,7 @@ export const Header = ({ translate, titleComponent }: any) => {
         Your home, smartan than ever
         <br />
         <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-          with ELLIE
+          is ELLIE
         </span>
       </h1>
       {titleComponent}
